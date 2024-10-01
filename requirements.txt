@@ -1,0 +1,6 @@
+# requirements.txt
+
+configparser==7.1.0
+logging==0.4.9.6
+numpy==2.0.1
+pymodbusTCP==0.3.0
