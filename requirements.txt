@@ -1,0 +1,24 @@
+# =============================================================================
+# MODSTAN - Python Dependencies
+# =============================================================================
+#
+# Install all:
+#   pip install -r requirements.txt
+#
+# Install with a specific database adapter:
+#   pip install psycopg2-binary              # PostgreSQL
+#   pip install mysql-connector-python       # MariaDB / MySQL
+#
+# SQLite and CSV adapters use Python's standard library — no extra packages needed.
+# =============================================================================
+
+# ── Core (required) ───────────────────────────────────────────────────────────
+pyModbusTCP==0.3.0
+
+# ── Database Adapters (install as needed) ─────────────────────────────────────
+
+# PostgreSQL
+psycopg2-binary>=2.9.0
+
+# MariaDB / MySQL
+mysql-connector-python>=8.0.0

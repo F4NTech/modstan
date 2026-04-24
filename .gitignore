@@ -1,0 +1,38 @@
+# Virtual environment
+venv/
+.venv/
+env/
+
+# Python cache
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+
+# Logs and exports — do not commit data files
+logs/
+exports/
+
+# Device configs containing credentials — NEVER commit to Git
+config/*.conf
+!config/example.conf
+
+# Local SQLite databases
+*.db
+*.sqlite
+
+# OS-generated files
+.DS_Store
+Thumbs.db
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Build artifacts
+*.egg-info/
+dist/
+build/
