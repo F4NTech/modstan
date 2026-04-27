@@ -2,6 +2,7 @@
 # =============================================================================
 # MODSTAN v2.0.1 - Main Entry Point
 # Modbus TCP Data Logger — multi-device, multi-threaded, storage-agnostic
+# © github.com/F4NTech - @linkedin.com/in/muhammad-farhan-013455141
 # =============================================================================
 
 import sys
@@ -343,6 +344,7 @@ def main():
 
     if args.version:
         print(f"MODSTAN v{MODSTAN_VERSION}")
+        print(f"© github.com/F4NTech")
         sys.exit(0)
 
     setup_logger(device_name='modstan', verbose=args.verbose)
