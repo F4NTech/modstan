@@ -149,6 +149,7 @@ def cmd_status(args):
         print(f"    Service    : {color}{st['service']}{RESET} ({st['active']})")
         print(f"    Since      : {st['uptime'] or 'N/A'}")
         print(f"    Host       : {cfg.modbus_host}:{cfg.modbus_port}")
+        print(f"    Slave ID   : {cfg.modbus_slave_id}")
         print(f"    Interval   : {cfg.interval}s (default)")
         print(f"    Registers  : {len(cfg.registers)}")
         for r in cfg.registers:
@@ -215,7 +216,10 @@ def cmd_read(args):
 
     print(f"\n  Connecting to {cfg.modbus_host}:{cfg.modbus_port}...\n")
     client = ModbusClient(
-        host=cfg.modbus_host, port=cfg.modbus_port, timeout=cfg.modbus_timeout
+        host    = cfg.modbus_host,
+        port    = cfg.modbus_port,
+        unit_id = cfg.modbus_slave_id,   # ← tambah ini
+        timeout = cfg.modbus_timeout,
     )
     if not client.open():
         fail(f"Cannot connect to {cfg.modbus_host}:{cfg.modbus_port}")
@@ -275,6 +279,7 @@ def cmd_config(args):
     print(f"\n  {BOLD}[MODBUS]{RESET}")
     print(f"    host        = {cfg.modbus_host}")
     print(f"    port        = {cfg.modbus_port}")
+    print(f"    slave_id    = {cfg.modbus_slave_id}")
     print(f"    timeout     = {cfg.modbus_timeout}s")
     print(f"    max_retries = {cfg.modbus_max_retries}  (0 = unlimited)")
     print(f"    retry_delay = {cfg.modbus_retry_delay}s")

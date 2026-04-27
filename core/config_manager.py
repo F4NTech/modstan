@@ -20,6 +20,7 @@ DEFAULT_TIMEOUT     = 10
 DEFAULT_RETRY_DELAY = 5
 DEFAULT_MAX_RETRIES = 0
 DEFAULT_PORT_MODBUS = 502
+DEFAULT_SLAVE_ID    = 1
 DEFAULT_TABLE       = 'register_logs'
 DEFAULT_RETENTION   = 0
 
@@ -109,6 +110,7 @@ class DeviceConfig:
         # [MODBUS]
         self.modbus_host        = d.get('MODBUS', 'host').strip()
         self.modbus_port        = int(d.get('MODBUS', 'port',        fallback=str(DEFAULT_PORT_MODBUS)))
+        self.modbus_slave_id    = int(d.get('MODBUS', 'slave_id',    fallback='1'))
         self.modbus_timeout     = int(d.get('MODBUS', 'timeout',     fallback=str(DEFAULT_TIMEOUT)))
         self.modbus_max_retries = int(d.get('MODBUS', 'max_retries', fallback=str(DEFAULT_MAX_RETRIES)))
         self.modbus_retry_delay = int(d.get('MODBUS', 'retry_delay', fallback=str(DEFAULT_RETRY_DELAY)))

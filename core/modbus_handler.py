@@ -33,6 +33,7 @@ class ModbusHandler:
         self._client  = ModbusClient(
             host      = config.modbus_host,
             port      = config.modbus_port,
+            unit_id   = config.modbus_slave_id,
             timeout   = config.modbus_timeout,
             auto_open = False,
         )

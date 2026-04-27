@@ -275,7 +275,12 @@ class ModstanApp:
         print("  Checking initial Modbus connections...\n")
         for runner in self.runners:
             cfg    = runner.config
-            client = ModbusClient(host=cfg.modbus_host, port=cfg.modbus_port, timeout=3)
+            client = ModbusClient(
+                host    = cfg.modbus_host,
+                port    = cfg.modbus_port,
+                unit_id = cfg.modbus_slave_id,   # ← tambah ini
+                timeout = 3,
+            )
             if client.open():
                 client.close()
                 print(f"    ✓ {cfg.name:<20} {cfg.modbus_host}:{cfg.modbus_port} — reachable")

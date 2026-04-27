@@ -65,6 +65,7 @@ interval = 5            # default polling interval for all registers (seconds)
 [MODBUS]
 host        = 192.168.1.100
 port        = 502
+slave_id    = 1         # default 1
 timeout     = 10
 max_retries = 0         # 0 = retry indefinitely
 retry_delay = 5
