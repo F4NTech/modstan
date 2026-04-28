@@ -1,5 +1,5 @@
 # MODSTAN v2.0.1
-**Modbus TCP Data Logger — Instant, Modular, Production-Ready**
+**Modbus TCP Data Logger — Instant, Modular**
 
 ---
 
